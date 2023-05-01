@@ -7,11 +7,21 @@ export default new Vuex.Store({
   state: {
     BaseProducts: DATA,
     products: [],
+    AddToListCounter: 0,
+    AddToList: [],
   },
   getters: {
     AllProducts(state) {
       return state.BaseProducts;
     },
+    ListItemsCounter(state) {
+      return state.AddToListCounter;
+    },
+
+    ListItemsbascket(state) {
+      return state.AddToList;
+    },
+
     Allcategories(state) {
       const unique = {};
       let result = state.BaseProducts.filter((obj) => {
@@ -28,8 +38,19 @@ export default new Vuex.Store({
     },
   },
   mutations: {
-    ChangeContent(state, payload) {
-      state.Products = payload;
+    ChangerCounter(state) {
+      state.AddToListCounter = state.AddToListCounter + 1;
+    },
+    ReduceCounter(state) {
+      state.AddToListCounter = state.AddToListCounter - 1;
+    },
+    AddToList(state, payload) {
+      state.AddToList = state.AddToList.concat(payload);
+    },
+    RemoveToList(state, payload) {
+      state.AddToList = state.AddToList.filter((obj) => {
+        return obj.id !== payload;
+      });
     },
     GetCategorie(state, Categorie) {
       // console.log(Categorie);

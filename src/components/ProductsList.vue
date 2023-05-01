@@ -8,11 +8,14 @@
         sm="3"
         class="pa-6"
       >
-        <v-card class="pa-2" outlined tile>
+        <v-card class="pa-2 d-flex justify-center align-center" outlined tile>
           <v-img
+            class="img--center"
             :lazy-src="NewProduct.img"
             max-height="200"
-            max-width="250"
+            max-width="200"
+            height="200"
+            width="200"
             :src="NewProduct.img"
           ></v-img>
 
@@ -32,43 +35,43 @@ export default {
     return {
       NewProducts: [
         {
-          img: "https://yozimarket.com/1342-home_default/anneaux-de-calamar-500g-islamar-.jpg",
-          description: "ANNEAUX DE CALAMAR 500g ISLAMAR",
+          img: "https://zoneplay.ma/wp-content/uploads/2021/07/5jEWQMvjoVJ1yGAfhGqRy9e758YO55hqej4zfgmCYOg_350x200_2x-0-300x400.jpeg",
+          description: "Amazon Card 1 Month",
           price: "45,00 MAD",
         },
         {
-          img: "https://yozimarket.com/1340-home_default/feta-cheese-rolls-12-480g.jpg",
-          description: "FETA CHEESE ROLLS *12 480g",
+          img: "https://zoneplay.ma/wp-content/uploads/2021/10/spotify-card-10-706x800-3-300x400.png.webp",
+          description: "Spotify Premium 3 Month",
           price: "60,00 MAD",
         },
         {
-          img: "https://yozimarket.com/1338-home_default/spiral-pie-cheese-800g-lezza-.jpg",
-          description: "SPIRAL PIE CHEESE 800g LEZZA",
+          img: "https://zoneplay.ma/wp-content/uploads/2021/07/u5fIEE2UHsLRPg3yJTUsLgkcmJrWRAL4ufHvIa2KUJw_350x200_2x-0-300x400.jpeg",
+          description: "Nitendo Switch Plus",
           price: "56,00 MAD",
         },
         {
-          img: "https://yozimarket.com/1337-home_default/street-fries-cheddar-crispy-onions-300g-mccain.jpg",
-          description: "STREET FRIES CHEDDAR CRISPY ONIONS...",
+          img: "https://zoneplay.ma/wp-content/uploads/2021/07/pL6W5WrfKR33bhWXvyEui03-tU4aXsmHeAmAkh0RHg_350x200_2x-0-300x400.jpeg",
+          description: "Play Station Plus",
           price: "45,00 MAD",
         },
         {
-          img: "https://yozimarket.com/1336-home_default/potato-up-aux-herbes-2x90g-mccain.jpg",
-          description: "POTATO'UP AUX HERBES 2X90g MCCAIN",
+          img: "https://zoneplay.ma/wp-content/uploads/2021/07/JR5v-wtibBraTiwW3YXRMRPp5CC_6i4mM0MU3QmkrTo_350x200_2x-0-1-300x400.jpeg",
+          description: "Netflix Pack 1 Month",
           price: "25,00 MAD",
         },
         {
-          img: "https://yozimarket.com/1335-home_default/frit-up-mccain-180-g-2-90-g.jpg",
-          description: " Frit up - McCain - 180 g (2 * 90 g)",
+          img: "https://zoneplay.ma/wp-content/uploads/2021/12/steam-gift-card-50-300x400.png",
+          description: "Steam Pack Game",
           price: "25,00 MAD",
         },
         {
-          img: "https://yozimarket.com/1334-home_default/crispy-onion-rings-350g-mccain.jpg",
-          description: "CRISPY ONION RINGS 350g MCCAIN",
+          img: "https://zoneplay.ma/wp-content/uploads/2021/10/3296895388-300x400.jpg",
+          description: "Xbox Steam Pack",
           price: "28,00 MAD",
         },
         {
-          img: "https://yozimarket.com/1333-home_default/nachos-triangles-230g-pickers-mccain-.jpg",
-          description: " NACHOS TRIANGLES 230g PICKERS MCCAIN",
+          img: "https://zoneplay.ma/wp-content/uploads/2021/10/5-300x400.jpg",
+          description: "Google Play Credit",
           price: "35,00 MAD",
         },
       ],

@@ -10,7 +10,7 @@
         >
           <v-icon>{{ system.icon }}</v-icon>
           <span class="d-none d-md-inline">
-            {{ system.title }}
+            {{ system.title }}<span v-if="system.Count"> {{ Counter }}</span>
           </span>
         </div>
       </div>
@@ -21,16 +21,26 @@
 
 <script>
 export default {
+  computed: {
+    Counter() {
+      return this.$store.getters.ListItemsCounter;
+    },
+  },
+  mounted() {
+    this.systembar[1].Count = this.$store.getters.ListItemsCounter;
+  },
   data() {
     return {
       systembar: [
         {
-          title: "rechercher",
-          icon: "mdi-magnify",
+          title: "Liste de souhaits",
+          Count: true,
+          icon: "mdi-heart",
         },
         {
-          title: "Liste de souhaits 0",
-          icon: "mdi-heart",
+          title: "rechercher",
+          Count: true,
+          icon: "mdi-magnify",
         },
       ],
     };

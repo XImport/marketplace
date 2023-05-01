@@ -1,6 +1,6 @@
 <template>
   <v-container class="grey lighten-5">
-    <v-row no-gutters class="align-center">
+    <v-row no-gutters class="align-center pa-0">
       <v-col
         v-for="(NewProduct, index) in AllProducts"
         :key="index"
@@ -8,16 +8,29 @@
         sm="3"
         class="pa-2"
       >
-        <v-card class="pa-2 justify-center" outlined tile>
+        <v-card
+          class="pa-2 justify-center img--center"
+          outlined
+          tile
+          max-width="374"
+        >
           <v-img
             :lazy-src="NewProduct.img"
             max-height="200"
-            max-width="250"
             :src="NewProduct.img"
           >
-            <v-btn class="align-end red--text pb-2" icon
-              ><v-icon>mdi-heart-outline</v-icon></v-btn
-            >
+            <div v-if="AddBoxItems(NewProduct)">
+              <v-btn class="align-end red--text pb-2" icon>
+                <v-icon @click="Addtocard(NewProduct)"
+                  >mdi-heart-outline</v-icon
+                >
+              </v-btn>
+            </div>
+            <div v-if="!AddBoxItems(NewProduct)">
+              <v-btn class="align-end red--text pb-2" icon>
+                <v-icon @click="Removetocard(NewProduct.id)">mdi-heart</v-icon>
+              </v-btn>
+            </div>
           </v-img>
 
           <div class="my-4 text-subtitle-1 text-center">
@@ -31,6 +44,7 @@
 </template>
 
 <script>
+import store from "@/store";
 export default {
   props: {
     AllProducts: {
@@ -38,8 +52,32 @@ export default {
       required: true,
     },
   },
+  methods: {
+    Addtocard(Item) {
+      console.log(Item);
+      store.commit("ChangerCounter");
+      store.commit("AddToList", Item);
+    },
+    Removetocard(Item) {
+      store.commit("ReduceCounter");
+      store.commit("RemoveToList", Item);
+    },
+    AddBoxItems(Item) {
+      for (let i = 0; i < this.$store.getters.ListItemsbascket.length; i++) {
+        if (this.$store.getters.ListItemsbascket[i] === Item) {
+          return false;
+        }
+      }
+      return true;
+    },
+  },
   data() {
     return {};
+  },
+  computed: {
+    BascketBox() {
+      return this.$store.getters.ListItemsbascket;
+    },
   },
 };
 </script>
@@ -70,5 +108,12 @@ export default {
     max-width: 90%;
     max-height: 90%;
   }
+}
+
+.img--center {
+  justify-content: center;
+  align-self: center;
+  align-content: center;
+  margin-left: 25%;
 }
 </style>
