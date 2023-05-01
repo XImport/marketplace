@@ -8,14 +8,12 @@
         sm="3"
         class="pa-6"
       >
-        <v-card class="pa-2 d-flex justify-center align-center" outlined tile>
+        <v-card class="pa-2 justify-center align-center" outlined tile>
           <v-img
-            class="img--center"
+            class="img--center ml-7"
             :lazy-src="NewProduct.img"
             max-height="200"
             max-width="200"
-            height="200"
-            width="200"
             :src="NewProduct.img"
           ></v-img>
 
