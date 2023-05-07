@@ -19,14 +19,14 @@
             max-height="200"
             :src="NewProduct.img"
           >
-            <div v-if="AddBoxItems(NewProduct)">
+            <div v-if="AddBoxItems(NewProduct.description)">
               <v-btn class="align-end red--text pb-2" icon>
                 <v-icon @click="Addtocard(NewProduct)"
                   >mdi-heart-outline</v-icon
                 >
               </v-btn>
             </div>
-            <div v-if="!AddBoxItems(NewProduct)">
+            <div v-if="!AddBoxItems(NewProduct.description)">
               <v-btn class="align-end red--text pb-2" icon>
                 <v-icon @click="Removetocard(NewProduct.id)">mdi-heart</v-icon>
               </v-btn>
@@ -81,7 +81,7 @@ export default {
     },
     AddBoxItems(Item) {
       for (let i = 0; i < this.$store.getters.ListItemsbascket.length; i++) {
-        if (this.$store.getters.ListItemsbascket[i] === Item) {
+        if (this.$store.getters.ListItemsbascket[i].description === Item) {
           return false;
         }
       }
