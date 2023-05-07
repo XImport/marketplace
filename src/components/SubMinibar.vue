@@ -8,19 +8,21 @@
           :key="index"
           class="mr-3 white--text"
         >
-          <v-icon>{{ system.icon }}</v-icon>
-          <span class="d-none d-md-inline">
-            {{ system.title }}
+          <v-btn :to="system.to">
+            <v-icon>{{ system.icon }}</v-icon>
+            <span class="d-none d-md-inline">
+              {{ system.title }}
 
-            <span
-              :class="{
-                'ml-2 red pa-1 rounded-xl text-center pr-2': Counter > 0,
-              }"
-              v-if="system.Count"
-            >
-              {{ Counter }}
+              <span
+                :class="{
+                  'ml-2 red pa-1 rounded-xl text-center pr-2': Counter > 0,
+                }"
+                v-if="system.Count"
+              >
+                {{ Counter }}
+              </span>
             </span>
-          </span>
+          </v-btn>
         </div>
       </div>
       <v-spacer></v-spacer>
@@ -54,6 +56,7 @@ export default {
           title: "Liste de souhaits",
           Count: true,
           icon: "mdi-heart",
+          to: "/wishlist",
         },
         {
           title: "rechercher",
@@ -66,4 +69,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style>
+.v-btn {
+  background-color: transparent !important;
+}
+</style>

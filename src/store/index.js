@@ -38,6 +38,10 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    // RemoveToList(state,id){
+    //   state.AddToList.filter((item) => item.id != id);
+
+    // },
     ChangerCounter(state) {
       state.AddToListCounter = state.AddToListCounter + 1;
     },

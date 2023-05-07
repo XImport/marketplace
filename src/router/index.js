@@ -3,6 +3,8 @@ import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ProduitsView from "../views/ProduitsView";
 import ProduitsSubProducts from "../views/ProduitsSubProductView.vue";
+import WishLIst from "../views/WishListView.vue";
+import DetailsProducts from "../views/DetailsProductsVuew.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -17,7 +19,18 @@ const routes = [
     component: ProduitsView,
   },
   {
+    path: "/wishlist",
+    name: "WishList",
+    component: WishLIst,
+  },
+  {
     path: "/produits/:id",
+    name: "ProductDetails",
+    component: DetailsProducts,
+    props: true,
+  },
+  {
+    path: "/Categories/:id",
     name: "Subproduits",
     component: ProduitsSubProducts,
     props: true,

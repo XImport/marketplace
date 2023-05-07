@@ -37,6 +37,13 @@
             {{ NewProduct.description }}
           </div>
           <h3 class="my-4 text-center">{{ NewProduct.price }}</h3>
+          <v-card-actions>
+            <v-btn
+              class="mx-auto rounded-xl black white--text"
+              @click="DetailsPage(NewProduct)"
+              >View More</v-btn
+            >
+          </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
@@ -53,6 +60,16 @@ export default {
     },
   },
   methods: {
+    DetailsPage(Product) {
+      console.log(Product);
+      this.$router.push({
+        name: "ProductDetails",
+        params: {
+          id: Product,
+          Product: Product,
+        },
+      });
+    },
     Addtocard(Item) {
       console.log(Item);
       store.commit("ChangerCounter");
