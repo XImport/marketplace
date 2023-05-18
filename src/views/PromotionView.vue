@@ -4,11 +4,10 @@
     <SubMinibar />
     <NavBar />
     <div class="text-h3 pb-6 text-center mt-9 text--custom pt-12 font--cus">
-      Nos produits
+      Produits Avec Promotions
     </div>
     <div class="d-flex">
-      <ListCategorie />
-      <v-container class="cont--position">
+      <v-container>
         <AllProductsList :AllProducts="AllProducts" />
       </v-container>
     </div>
@@ -23,7 +22,7 @@
 import NavBar from "../components/NavBar.vue";
 import SubMinibar from "@/components/SubMinibar.vue";
 import MiniBar from "@/components/MiniBar.vue";
-import ListCategorie from "@/components/ListCategorie.vue";
+
 import AllProductsList from "@/components/AllProductsList.vue";
 import FootTer from "@/components/FootTer.vue";
 export default {
@@ -35,7 +34,7 @@ export default {
     SubMinibar,
     MiniBar,
     NavBar,
-    ListCategorie,
+
     AllProductsList,
     FootTer,
   },
@@ -48,10 +47,6 @@ export default {
 </script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap");
-
-.cont--position {
-  margin-left: -3%;
-}
 
 .font--cus {
   font-family: "Lato", sans-serif;

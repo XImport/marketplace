@@ -1,5 +1,5 @@
 <template>
-  <v-container class="grey lighten-5">
+  <v-container class="transparent">
     <v-row no-gutters class="align-center pa-0">
       <v-col
         v-for="(NewProduct, index) in AllProducts"
@@ -132,5 +132,6 @@ export default {
   align-self: center;
   align-content: center;
   margin-left: 25%;
+  width: 100%;
 }
 </style>

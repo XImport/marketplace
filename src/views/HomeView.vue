@@ -73,7 +73,9 @@ import ClientsReview from "@/components/ClientsReview.vue";
 import BannerText from "@/components/BannerText.vue";
 import ServicePack from "@/components/ServicePack.vue";
 import MapLocation from "@/components/MapLocation.vue";
+
 import FootTer from "@/components/FootTer.vue";
+
 export default {
   name: "HomeView",
 

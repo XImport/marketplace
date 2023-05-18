@@ -5,6 +5,8 @@ import ProduitsView from "../views/ProduitsView";
 import ProduitsSubProducts from "../views/ProduitsSubProductView.vue";
 import WishLIst from "../views/WishListView.vue";
 import DetailsProducts from "../views/DetailsProductsVuew.vue";
+import PromotionVue from "../views/PromotionView.vue";
+import LivraisonVue from "../views/LivraisonView.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -22,6 +24,16 @@ const routes = [
     path: "/wishlist",
     name: "WishList",
     component: WishLIst,
+  },
+  {
+    path: "/promotion",
+    name: "Promotion",
+    component: PromotionVue,
+  },
+  {
+    path: "/livraison",
+    name: "Livraison",
+    component: LivraisonVue,
   },
   {
     path: "/produits/:id",

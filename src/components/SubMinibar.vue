@@ -11,6 +11,34 @@
           <v-btn :to="system.to">
             <v-icon>{{ system.icon }}</v-icon>
             <span class="d-none d-md-inline">
+              <v-dialog
+                transition="dialog-top-transition"
+                max-width="600"
+                v-if="system.dialog"
+              >
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn v-bind="attrs" v-on="on">Recherche</v-btn>
+                </template>
+                <template v-slot:default="dialog">
+                  <v-card>
+                    <v-toolbar color="black justify-center" dark></v-toolbar>
+                    <v-card-text>
+                      <div class="text-h2 pa-12">
+                        <v-text-field
+                          label="Recherche"
+                          class="custom-input"
+                          outlined
+                          append-icon="mdi-magnify"
+                        ></v-text-field>
+                      </div>
+                    </v-card-text>
+                    <v-card-actions class="justify-end">
+                      <v-btn text @click="dialog.value = false">Close</v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </template>
+              </v-dialog>
+
               {{ system.title }}
 
               <span
@@ -57,11 +85,13 @@ export default {
           Count: true,
           icon: "mdi-heart",
           to: "/wishlist",
+          dialog: false,
         },
         {
-          title: "rechercher",
+          title: "",
           Count: false,
           icon: "mdi-magnify",
+          dialog: true,
         },
       ],
     };
@@ -72,5 +102,8 @@ export default {
 <style>
 .v-btn {
   background-color: transparent !important;
+}
+.custom-input.v-text-field--outlined .v-input__control input:focus {
+  border-color: #ff0000 !important; /* Replace with your desired color */
 }
 </style>

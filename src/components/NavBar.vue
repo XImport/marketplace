@@ -152,14 +152,14 @@ export default {
         {
           text: "Promotions",
           icon: "mdi-cast",
-          link: "/",
+          link: "/promotion",
           dropdown: false,
         },
 
         {
           text: "Livraison",
           icon: "mdi-text-box-multiple-outline",
-          link: "/",
+          link: "/livraison",
           dropdown: false,
         },
       ],

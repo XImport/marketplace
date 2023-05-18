@@ -4,15 +4,11 @@
     <SubMinibar />
     <NavBar />
     <div class="text-h3 pb-6 text-center mt-9 text--custom pt-12 font--cus">
-      Nos produits
+      Livraison
     </div>
-    <div class="d-flex">
-      <ListCategorie />
-      <v-container class="cont--position">
-        <AllProductsList :AllProducts="AllProducts" />
-      </v-container>
-    </div>
-
+    <v-container v-for="(img, index) in Livraison" :key="index">
+      <v-img :src="img.src" />
+    </v-container>
     <div class="pt-12 mt-6">
       <FootTer />
     </div>
@@ -23,20 +19,36 @@
 import NavBar from "../components/NavBar.vue";
 import SubMinibar from "@/components/SubMinibar.vue";
 import MiniBar from "@/components/MiniBar.vue";
-import ListCategorie from "@/components/ListCategorie.vue";
-import AllProductsList from "@/components/AllProductsList.vue";
+
 import FootTer from "@/components/FootTer.vue";
 export default {
   name: "HomeView",
   data() {
-    return {};
+    return {
+      Livraison: [
+        {
+          src: "https://yozimarket.com/img/cms/livraison%20modifier-1_1.jpg",
+        },
+        {
+          src: "https://yozimarket.com/img/cms/livraison%20modifier-2.jpg",
+        },
+        {
+          src: "https://yozimarket.com/img/cms/livraison%20modifier-3.jpg",
+        },
+        {
+          src: "https://yozimarket.com/img/cms/livraison%20modifier-4.jpg",
+        },
+        {
+          src: "https://yozimarket.com/img/cms/livraison%20modifier-5.jpg",
+        },
+      ],
+    };
   },
   components: {
     SubMinibar,
     MiniBar,
     NavBar,
-    ListCategorie,
-    AllProductsList,
+
     FootTer,
   },
   computed: {
